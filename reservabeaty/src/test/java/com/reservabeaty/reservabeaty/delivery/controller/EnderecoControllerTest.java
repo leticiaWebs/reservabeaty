@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.reservabeaty.reservabeaty.domain.models.Endereco;
-import com.reservabeaty.reservabeaty.usecase.service.EnderecoService;
+import com.reservabeaty.reservabeaty.application.usecase.service.EnderecoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

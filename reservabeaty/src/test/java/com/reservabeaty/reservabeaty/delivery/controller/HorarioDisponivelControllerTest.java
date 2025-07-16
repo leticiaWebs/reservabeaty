@@ -1,7 +1,7 @@
 package com.reservabeaty.reservabeaty.delivery.controller;
 
 import com.reservabeaty.reservabeaty.domain.models.HorarioDisponivel;
-import com.reservabeaty.reservabeaty.usecase.service.HorarioDisponivelService;
+import com.reservabeaty.reservabeaty.application.usecase.service.HorarioDisponivelService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

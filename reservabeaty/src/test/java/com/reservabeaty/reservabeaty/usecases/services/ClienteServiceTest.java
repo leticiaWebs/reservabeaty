@@ -2,7 +2,7 @@ package com.reservabeaty.reservabeaty.usecases.services;
 
 import com.reservabeaty.reservabeaty.domain.models.Cliente;
 import com.reservabeaty.reservabeaty.domain.repository.ClienteRepository;
-import com.reservabeaty.reservabeaty.usecase.service.ClienteService;
+import com.reservabeaty.reservabeaty.application.usecase.service.ClienteService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

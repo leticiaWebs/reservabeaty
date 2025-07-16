@@ -2,7 +2,7 @@ package com.reservabeaty.reservabeaty.delivery.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.reservabeaty.reservabeaty.domain.models.Servico;
-import com.reservabeaty.reservabeaty.usecase.service.ServicoService;
+import com.reservabeaty.reservabeaty.application.usecase.service.ServicoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

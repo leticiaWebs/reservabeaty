@@ -11,7 +11,7 @@ import com.reservabeaty.reservabeaty.domain.models.Avaliacao;
 import com.reservabeaty.reservabeaty.domain.models.Cliente;
 import com.reservabeaty.reservabeaty.domain.models.Estabelecimento;
 import com.reservabeaty.reservabeaty.domain.models.Profissional;
-import com.reservabeaty.reservabeaty.usecase.service.AvaliacaoService;
+import com.reservabeaty.reservabeaty.application.usecase.service.AvaliacaoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

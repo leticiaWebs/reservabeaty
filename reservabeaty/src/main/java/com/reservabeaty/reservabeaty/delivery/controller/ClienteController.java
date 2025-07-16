@@ -2,7 +2,7 @@ package com.reservabeaty.reservabeaty.delivery.controller;
 
 
 import com.reservabeaty.reservabeaty.domain.models.Cliente;
-import com.reservabeaty.reservabeaty.usecase.service.ClienteService;
+import com.reservabeaty.reservabeaty.application.usecase.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

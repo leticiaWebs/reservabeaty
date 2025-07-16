@@ -90,7 +90,3 @@ public class Agendamento {
         this.status = status;
     }
 }
-
-
-
-

@@ -2,7 +2,7 @@ package com.reservabeaty.reservabeaty.usecases.services;
 
 import com.reservabeaty.reservabeaty.domain.models.Servico;
 import com.reservabeaty.reservabeaty.domain.repository.ServicoRepository;
-import com.reservabeaty.reservabeaty.usecase.service.ServicoService;
+import com.reservabeaty.reservabeaty.application.usecase.service.ServicoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;

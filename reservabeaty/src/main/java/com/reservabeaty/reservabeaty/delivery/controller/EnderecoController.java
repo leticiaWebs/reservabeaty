@@ -2,7 +2,7 @@ package com.reservabeaty.reservabeaty.delivery.controller;
 
 
 import com.reservabeaty.reservabeaty.domain.models.Endereco;
-import com.reservabeaty.reservabeaty.usecase.service.EnderecoService;
+import com.reservabeaty.reservabeaty.application.usecase.service.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -3,7 +3,7 @@ package com.reservabeaty.reservabeaty.usecases.services;
 import com.reservabeaty.reservabeaty.domain.models.HorarioDisponivel;
 import com.reservabeaty.reservabeaty.domain.models.Profissional;
 import com.reservabeaty.reservabeaty.domain.repository.ProfissionalRepository;
-import com.reservabeaty.reservabeaty.usecase.service.ProfissionalService;
+import com.reservabeaty.reservabeaty.application.usecase.service.ProfissionalService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;

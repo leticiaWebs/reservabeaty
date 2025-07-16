@@ -2,7 +2,7 @@ package com.reservabeaty.reservabeaty.delivery.controller;
 
 
 import com.reservabeaty.reservabeaty.domain.models.HorarioDisponivel;
-import com.reservabeaty.reservabeaty.usecase.service.HorarioDisponivelService;
+import com.reservabeaty.reservabeaty.application.usecase.service.HorarioDisponivelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;

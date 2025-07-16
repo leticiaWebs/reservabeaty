@@ -3,7 +3,7 @@ package com.reservabeaty.reservabeaty.usecases.services;
 import com.reservabeaty.reservabeaty.domain.models.Agendamento;
 import com.reservabeaty.reservabeaty.domain.models.StatusAgendamento;
 import com.reservabeaty.reservabeaty.domain.repository.AgendamentoRepository;
-import com.reservabeaty.reservabeaty.usecase.service.AgendamentoService;
+import com.reservabeaty.reservabeaty.application.usecase.service.AgendamentoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
