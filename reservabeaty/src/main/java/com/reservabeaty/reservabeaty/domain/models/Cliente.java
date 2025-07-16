@@ -1,6 +1,11 @@
 package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "tb_cliente")
@@ -11,6 +16,16 @@ public class Cliente {
     private String nome;
     private String email;
     private String telefone;
+
+    public Cliente() {
+    }
+
+    public Cliente(Long id, String nome, String email, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
 
     public Long getId() {
         return id;

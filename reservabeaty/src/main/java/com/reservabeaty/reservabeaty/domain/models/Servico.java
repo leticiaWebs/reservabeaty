@@ -1,6 +1,11 @@
 package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "tb_servico")
@@ -12,6 +17,9 @@ public class Servico {
     private String descricao;
     private Double preco;
     private Long estabelecimentoId;
+
+    public Servico() {
+    }
 
     public Servico(Long id, String nome, String descricao, Double preco, Long estabelecimentoId) {
         this.id = id;

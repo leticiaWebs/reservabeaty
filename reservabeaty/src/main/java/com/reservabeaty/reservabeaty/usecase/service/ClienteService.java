@@ -13,7 +13,8 @@ public class ClienteService {
     private ClienteRepository repository;
 
     public Cliente criar(Cliente cliente) {
-        // Verificar se email já existe
+
+
         if (repository.findByEmail(cliente.getEmail()).isPresent()) {
             throw new RuntimeException("Email já cadastrado");
         }

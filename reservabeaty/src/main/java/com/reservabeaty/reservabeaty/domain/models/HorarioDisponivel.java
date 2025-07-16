@@ -1,12 +1,14 @@
 package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Getter
 
 @Entity
 @Table(name = "tb_horarioDisponivel")
@@ -18,7 +20,8 @@ public class HorarioDisponivel {
     private LocalTime horaInicio;
     private LocalTime horaFim;
 
-
+    public HorarioDisponivel() {
+    }
 
     public HorarioDisponivel(Long id, LocalDate data, LocalTime horaInicio, LocalTime horaFim) {
         this.id = id;

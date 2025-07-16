@@ -1,6 +1,11 @@
 package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "tb_avaliacao")
@@ -21,6 +26,9 @@ public class Avaliacao {
 
     private Integer nota;
     private String comentario;
+
+    public Avaliacao() {
+    }
 
     public Long getId() {
         return id;
@@ -68,5 +76,14 @@ public class Avaliacao {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Avaliacao(Long id, String comentario, Integer nota, Cliente cliente, Profissional profissional, Estabelecimento estabelecimento) {
+        this.id = id;
+        this.comentario = comentario;
+        this.nota = nota;
+        this.cliente = cliente;
+        this.profissional = profissional;
+        this.estabelecimento = estabelecimento;
     }
 }

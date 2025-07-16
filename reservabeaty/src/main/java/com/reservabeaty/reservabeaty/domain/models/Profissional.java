@@ -2,10 +2,13 @@ package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
-@AllArgsConstructor
+
 @Entity
 @Table(name = "tb_profissional")
 public class Profissional {
@@ -21,6 +24,17 @@ public class Profissional {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "profissionalId")
     private List<HorarioDisponivel> horariosDisponiveis;
+
+    public Profissional() {
+    }
+
+    public Profissional(Long id, String nome, String especialidade, Double tarifa, List<HorarioDisponivel> horariosDisponiveis) {
+        this.id = id;
+        this.nome = nome;
+        this.especialidade = especialidade;
+        this.tarifa = tarifa;
+        this.horariosDisponiveis = horariosDisponiveis;
+    }
 
     public Long getId() {
         return id;

@@ -2,8 +2,10 @@ package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@AllArgsConstructor
 @Entity
 @Table(name = "tb_endereco")
 public class Endereco {
@@ -16,6 +18,20 @@ public class Endereco {
     private String cidade;
     private String estado;
     private String cep;
+
+
+    public Endereco() {
+    }
+
+    public Endereco(Long id, String rua, String numero, String bairro, String cidade, String estado, String cep) {
+        this.id = id;
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
 
     public Long getId() {
         return id;

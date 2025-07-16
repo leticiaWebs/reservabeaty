@@ -2,10 +2,12 @@ package com.reservabeaty.reservabeaty.domain.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
-@AllArgsConstructor
 @Entity
 @Table(name = "tb_estabelecimento")
 public class Estabelecimento {
@@ -26,6 +28,19 @@ public class Estabelecimento {
     @CollectionTable(name = "tb_horarios_funcionamento", joinColumns = @JoinColumn(name = "estabelecimentId"))
     private List<HorarioFuncionamento> horariosFuncionamento;
     private List<String> fotos;
+
+    public Estabelecimento() {
+    }
+
+    public Estabelecimento(Long id, String nome, Endereco endereco, List<Servico> servicos, List<Profissional> profissionais, List<HorarioFuncionamento> horariosFuncionamento, List<String> fotos) {
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.servicos = servicos;
+        this.profissionais = profissionais;
+        this.horariosFuncionamento = horariosFuncionamento;
+        this.fotos = fotos;
+    }
 
     public Long getId() {
         return id;

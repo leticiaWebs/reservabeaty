@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
 @Entity
 @Table(name = "tb_agendamento")
 public class Agendamento {
@@ -18,6 +19,20 @@ public class Agendamento {
     private LocalDate data;
     private LocalTime hora;
     private StatusAgendamento status;
+
+
+    public Agendamento() {
+    }
+
+    public Agendamento(Long id, Long clienteId, Long profissionalId, Long servicoId, LocalDate data, LocalTime hora, StatusAgendamento status) {
+        this.id = id;
+        this.clienteId = clienteId;
+        this.profissionalId = profissionalId;
+        this.servicoId = servicoId;
+        this.data = data;
+        this.hora = hora;
+        this.status = status;
+    }
 
     public Long getId() {
         return id;

@@ -29,8 +29,4 @@ public class AvaliacaoController {
         return ResponseEntity.ok(service.listarPorProfissional(id));
     }
 
-    @GetMapping("/cliente/{id}")
-    public ResponseEntity<List<Avaliacao>> listarPorCliente(@PathVariable Long id) {
-        return ResponseEntity.ok(service.listarPorCliente(id));
-    }
 }
