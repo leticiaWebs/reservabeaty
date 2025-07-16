@@ -3,7 +3,6 @@ package com.reservabeaty.reservabeaty.delivery.controller;
 import com.reservabeaty.reservabeaty.domain.models.Agendamento;
 import com.reservabeaty.reservabeaty.domain.models.StatusAgendamento;
 import com.reservabeaty.reservabeaty.usecase.service.AgendamentoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +12,7 @@ import java.util.List;
 @RequestMapping("/agendamentos")
 public class AgendamentoController {
 
-    @Autowired
+
     private AgendamentoService service;
 
     @PostMapping
