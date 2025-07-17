@@ -1,18 +1,19 @@
-# Etapa de build
-FROM maven:3.8.6-eclipse-temurin-17 AS build
-WORKDIR /app
+   # Build stage
+   FROM maven:3.8.6-eclipse-temurin-17 AS build
+   WORKDIR /workspace/app
 
-COPY pom.xml .
-COPY mvnw .
-COPY .mvn .mvn
-COPY src src
+   # Copiar apenas o POM primeiro para cache de dependências
+   COPY pom.xml .
+   COPY src src
 
-RUN ./mvnw package -DskipTests
+   # Build do projeto
+   RUN mvn clean package -DskipTests
 
-# Etapa de runtime
-FROM eclipse-temurin:17-jre-alpine
-WORKDIR /app
+   # Runtime stage
+   FROM eclipse-temurin:17-jre
+   WORKDIR /app
+   COPY --from=build /workspace/app/target/*.jar app.jar
 
-COPY --from=build /app/target/*.jar app.jar
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+   EXPOSE 8080
+   CMD ["java", "-jar", "app.jar"]
+   
