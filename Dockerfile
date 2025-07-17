@@ -1,24 +1,18 @@
+# Etapa de build
 FROM maven:3.8.6-eclipse-temurin-17 AS build
-
 WORKDIR /app
 
- # 1. Copiar apenas o POM primeiro para otimizar cache
- COPY pom.xml .
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
+COPY src src
 
- # 2. Baixar todas dependências (incluindo plugins)
- RUN mvn dependency:go-offline -B
+RUN ./mvnw package -DskipTests
 
- # 3. Copiar o código fonte
- COPY src ./src
+# Etapa de runtime
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
 
- # 4. Compilar o projeto
- RUN mvn clean package -DskipTests
+COPY --from=build /app/target/*.jar app.jar
 
- # Estágio de produção
- FROM eclipse-temurin:17-jre
-
- WORKDIR /app
- COPY --from=build /app/target/*.jar app.jar
-
- EXPOSE 8080
- CMD ["java", "-jar", "app.jar"]CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
