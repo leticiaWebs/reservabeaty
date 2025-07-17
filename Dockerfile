@@ -1,31 +1,23 @@
-# Etapa de build
-FROM maven:3.8.6-eclipse-temurin-17 AS build
+FROM openjdk:17-jdk-slim
 
-# Define o diretório de trabalho
-WORKDIR /workspace/app
-
-# Copia o pom.xml e resolve dependências (cache otimizado)
-COPY pom.xml .
-
-RUN mvn dependency:go-offline
-
-# Copia o código-fonte
-COPY src ./src
-
-# Compila o projeto
-RUN mvn clean package -DskipTests
-
-# Etapa de runtime
-FROM eclipse-temurin:17-jre
-
-# Define o diretório de trabalho no container final
+# Definindo o diretório de trabalho no container
 WORKDIR /app
 
-# Copia o jar compilado da etapa de build para o container final
-COPY --from=build /workspace/app/target/*.jar app.jar
+# Copiando o arquivo pom.xml e os arquivos do projeto para o container
+COPY pom.xml ./
+COPY src ./src
 
-# Expõe a porta (ajuste se usar outra)
+# Copiando o wrapper do Maven, caso esteja usando
+COPY mvnw ./
+COPY .mvn ./.mvn
+
+# Instalando as dependências sem rodar a aplicação (para melhor performance de cache)
+RUN ./mvnw dependency:go-offline
+
+# Compilando o projeto
+RUN ./mvnw clean package -DskipTests
+
+# Expondo a porta em que o Spring Boot vai rodar (default 8080)
 EXPOSE 8080
-
 # Comando para rodar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
