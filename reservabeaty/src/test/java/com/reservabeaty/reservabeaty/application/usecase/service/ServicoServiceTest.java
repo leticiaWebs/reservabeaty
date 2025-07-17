@@ -1,4 +1,4 @@
-package com.reservabeaty.reservabeaty.usecases.services;
+package com.reservabeaty.reservabeaty.application.usecase.service;
 
 import com.reservabeaty.reservabeaty.domain.models.Servico;
 import com.reservabeaty.reservabeaty.domain.repository.ServicoRepository;
